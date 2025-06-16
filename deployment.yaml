@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jenkins-flask-app
+  labels:
+    app: jenkins-flask
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jenkins-flask
+  template:
+    metadata:
+      labels:
+        app: jenkins-flask
+    spec:
+      containers:
+      - name: jenkins-flask-container
+        image: alidevops8/jenkins-flask-ap:v1
+        ports:
+        - containerPort: 5000
