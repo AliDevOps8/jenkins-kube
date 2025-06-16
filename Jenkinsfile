@@ -57,7 +57,7 @@ pipeline {
         stage('Deploy to Staging')
         {
             steps {
-                sh 'kubectl config use-context user@staging.us-east-1.eksctl.io'
+                sh 'kubectl config use-context arn:aws:eks:eu-west-3:168224317535:cluster/amue'
                 sh 'kubectl config current-context'
                 sh "kubectl set image deployment/flask-app flask-app=${IMAGE_TAG}"
             }
