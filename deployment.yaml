@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: jenkins-flask-container
-        image: alidevops8/jenkins-flask-ap:v1
+        image: alidevops8/jenkins-flask-app:v1
         ports:
         - containerPort: 5000
