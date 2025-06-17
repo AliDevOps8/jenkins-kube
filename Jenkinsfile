@@ -63,7 +63,7 @@ pipeline {
             steps {
                 sh 'kubectl config use-context arn:aws:eks:eu-west-3:168224317535:cluster/amue'
                 sh 'kubectl config current-context'
-                sh "kubectl set image deployment/jenkins-flask-app flask-app=${IMAGE_TAG}"
+                sh "kubectl set image deployment/jenkins-flask-app jenkins-flask-container=${IMAGE_TAG}"
             }
         }
 
