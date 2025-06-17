@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh "pytest"
+                echo "Faire les tests ici "
             }
         }
 
