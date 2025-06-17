@@ -16,7 +16,12 @@ pipeline {
                 sh 'ls -la $KUBECONFIG'
                 sh 'chmod 644 $KUBECONFIG'
                 sh 'ls -la $KUBECONFIG'
-                sh "pip install -r requirements.txt"
+                sh '''
+                python3 -m venv venv
+                . venv/bin/activate
+                pip install --upgrade pip
+                pip install -r requirements.txt
+                '''
             }
         }
         stage('Test') {
