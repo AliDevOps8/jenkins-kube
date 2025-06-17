@@ -7,9 +7,8 @@ pipeline {
         KUBECONFIG = credentials('kubeconfig-credentials-id')
         AWS_ACCESS_KEY_ID = credentials('aws-access-key')
         AWS_SECRET_ACCESS_KEY = credentials('aws-secret-key')
-        
+        AWS_SESSION_TOKEN = credentials('AWS_SESSION_TOKEN')
     }
-
     
     stages {
         stage('Setup') {
